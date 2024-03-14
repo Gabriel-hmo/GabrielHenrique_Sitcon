@@ -34,12 +34,12 @@
 </head>
 <body>
     <div>
-        <nav class="navbar navbar-expand-lg bg-primary " data-bs-theme="dark">
+        <nav class="navbar navbar-expand-lg bg-primary " data-bs-theme="dark" id="nav">
             <div class="container-fluid">
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <button type="button" class="btn btn-outline-light">Solicitações Clinicas</button>
-                    <button type="button" class="btn btn-outline-light">Listagem de Solicitações</button>
+                <div class="navbar-nav" >
+                    <button id="btSoliciracao" type="button" class="btn btn-outline-light" onclick="window.location.href = 'index.php'">Solicitações Clinicas</button>
+                    <button type="button" class="btn btn-outline-light" onclick="window.location.href = 'index.php'">Listagem de Solicitações</button>
 
                     
                 </div>
@@ -64,7 +64,7 @@
             </div>
             <div class="col-md-4">
                 <label for="inputProfissional">Profissional: </label>
-                <select name="profissional" id="profissional">
+                <select name="profissional" id="profissional" class="form-select">
                     <option value = "0" selected> Selecione </option>
                     <?php
                     foreach($registros as $options){
@@ -77,7 +77,7 @@
             </div>
             <div class="col-md-4">
                 <label for="inputTipo">Tipo solicitação: </label>
-                <select name="tipo" id="tipo" onchange="selectProcedimento(this.value)">
+                <select class="form-select" name="tipo" id="tipo" onchange="selectProcedimento(this.value)">
                     <option value = "0" selected> Selecione </option>
                     <?php
                     foreach($registros2 as $options){
@@ -95,12 +95,12 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <label for="dataConsulta">Data: </label>
-                <input type="date" id="dataConsulta" name="dataConsulta">
+                <label for="dataConsulta" class="form-lable">Data: </label>
+                <input class="form-control" type="date" id="dataConsulta" name="dataConsulta">
             </div>
             <div class="col-md-3">
-                <label for= "horaConsulta">Hora: </label>
-                <input type="time" id="horaConsulta" name="horaConsulta">
+                <label for= "horaConsulta" class="form-lable">Hora: </label>
+                <input class="form-control" type="time" id="horaConsulta" name="horaConsulta">
             </div>
             <!-- <div class="form-group form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -108,7 +108,7 @@
             </div> -->
             <div id="divBt">
 
-                <button id="btSubmit" type="submit" class="btn btn-primary" onclick="salvar()">Salvar</button>
+                <button id="btSubmit" class="btn btn-primary" onclick="salvar()">Salvar</button>
             </div>
         </form>
     </div>
