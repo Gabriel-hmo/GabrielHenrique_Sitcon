@@ -38,7 +38,7 @@
             <div class="container-fluid">
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav" >
-                    <button id="btSoliciracao" type="button" class="btn btn-outline-light" onclick="window.location.href = 'index.php'">Solicitações Clinicas</button>
+                    <button id="btSolicitacao" type="button" class="btn btn-outline-light" onclick="window.location.href = 'index.php'">Solicitações Clinicas</button>
                     <button type="button" class="btn btn-outline-light" onclick="window.location.href = 'index.php'">Listagem de Solicitações</button>
 
                     
@@ -47,6 +47,8 @@
             </div>
         </nav>
     </div>
+    <button id="btVoltar" type="button" class="btn btn-secondary"  onclick="window.location.href = 'index.php'">Voltar</button>
+    <!-- <button id="btSolicitacao" type="button" class="btn btn-outline-light" onclick="window.location.href = 'index.php'">Voltar</button> -->
     <div id="divForm">
         <form id="formSolicitacao" class="row g-3">
             <input type="hidden" name="idPaciente" value="<?= $_POST['id'] ?>">
@@ -94,11 +96,11 @@
 
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-6">
                 <label for="dataConsulta" class="form-lable">Data: </label>
                 <input class="form-control" type="date" id="dataConsulta" name="dataConsulta">
             </div>
-            <div class="col-md-3">
+            <div class="col-md-6">
                 <label for= "horaConsulta" class="form-lable">Hora: </label>
                 <input class="form-control" type="time" id="horaConsulta" name="horaConsulta">
             </div>

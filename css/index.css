@@ -2,9 +2,20 @@
     text-align: center;
 }
 
-/* .btn-outline-light{
-    margin-left: 2%;
-} */
+.btn-outline-light{
+    display: inline;
+    white-space: nowrap;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+.navbar-nav{
+    position: relative;
+    height: 20%;
+}
+
+.navbar-expand-lg{
+    height: 20%;
+}
 
 .btn-primary{
     background-color: chocolate;

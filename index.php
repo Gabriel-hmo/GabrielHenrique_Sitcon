@@ -25,10 +25,9 @@
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <button type="button" class="btn btn-outline-light">Solicitações Clinicas</button>
-        <button type="button" class="btn btn-outline-light">Listagem de Solicitações</button>
-
-        
+      <button id="btSolicitacao" type="button" class="btn btn-outline-light" onclick="window.location.href = 'index.php'">Solicitações Clinicas</button>
+      <button id="btLista" type="button" class="btn btn-outline-light" onclick="window.location.href = 'listaSolicitacao.php'">Listagem de Solicitações</button>
+   
       </div>
     </div>
   </div>
