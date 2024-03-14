@@ -2,6 +2,12 @@
   include_once('config.php');
   $sql = "SELECT * FROM pacientes ORDER BY nome;";
   $result = $conexao->query($sql);
+  $pacientes = [];
+  while($retornoPaciente = mysqli_fetch_object($result)){
+    $pacientes[] = $retornoPaciente;
+  }
+  // var_dump($retotnoPaciente);
+  $idx = 0;
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +18,7 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="//cdn.datatables.net/2.0.2/css/dataTables.dataTables.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css\form.css" />
+    <link rel="stylesheet" type="text/css" href="css\index.css" />
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-primary " data-bs-theme="dark">
@@ -41,20 +47,22 @@
       </tr>
     </thead>
     <tbody id="tableB">
-      <?php while($paciente = mysqli_fetch_object($result)):?>
+      <?php foreach($pacientes as $key => $paciente):?>
         <tr>
-          <td><?= $paciente->nome?></td>
-          <td><?= $paciente->dataNasc?></td>
-          <td><?= $paciente->CPF?></td>
-          <td><button type="button" class="btn btn-primary">Prosseguir</button></td>
+          <input id="idPaciente<?=$key?>" type="hidden" value="<?= $paciente->id ?>">
+          <td id="pNome<?=$key?>"><?= $paciente->nome?></td>
+          <td id="pDtnasc<?=$key?>"><?= $paciente->dataNasc?></td>
+          <td id="pCPF<?=$key?>"><?= $paciente->CPF?></td>
+          <td><button type="button" class="btn btn-primary" id="prosseguir" onclick="enviarDados(<?= $key?>)">Prosseguir</button></td>
         </tr>
-      <?php endwhile?>
+      <?php endforeach;?>
       
     </tbody>
   </table>
 </div>
 </body>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
@@ -62,5 +70,5 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
 
-<script src= "index.js"></script>
+<script src= "js\index.js"></script>
 </html>

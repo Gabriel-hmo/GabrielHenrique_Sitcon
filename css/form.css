@@ -1,35 +1,22 @@
-.mb3 {
-    text-align: center;
-}
-
-/* .btn-outline-light{
-    margin-left: 2%;
-} */
-
-.btn-primary{
-    background-color: chocolate;
-}
-.navbar-nav{
-    border-radius: 5px;
-}
-
-#div-table{
+#divForm{
     margin-left: 10%;
     margin-right: 10%;
+    margin-top: 5%;
 }
 
-#table{
-    text-align: center;
+#divProcedimento{
+    display: inline;
 }
 
-.dt-search{
-    margin-top: 2%;
+#divBt{
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+}
+#btSubmit{
+    width: 20%;
 }
 
-#dt-search-0{
-    margin-left: 1%;
-}
-
-.dt-length{
-    display: none;
-}
+/* .form-group{
+    display:inline;
+} */
